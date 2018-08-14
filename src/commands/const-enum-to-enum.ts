@@ -60,7 +60,13 @@ export default class GenerateEnumFromConstEnum extends Command {
     const outFileName = path.basename(targetFilePath);
     const targetProject = new Project({ compilerOptions: { outDir } });
 
-    const targetFile = targetProject.createSourceFile(path.join(outDir, outFileName), {
+    const absoluteTargetFilePath = path.join(outDir, outFileName);
+
+    if (fs.existsSync(absoluteTargetFilePath)) {
+      fs.unlinkSync(absoluteTargetFilePath);
+    }
+
+    const targetFile = targetProject.createSourceFile(absoluteTargetFilePath, {
       enums: [
         {
           name: targetEnumName || sourceEnum.getName(),
