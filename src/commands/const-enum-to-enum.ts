@@ -1,4 +1,5 @@
 import { Command, flags } from '@oclif/command';
+import * as fs from 'fs';
 import * as path from 'path';
 import Project, { EnumMemberStructure } from 'ts-simple-ast';
 
@@ -50,11 +51,16 @@ export default class GenerateEnumFromConstEnum extends Command {
       throw new Error('Enum not found source file');
     }
 
-    const outDir = path.dirname(targetFilePath);
+    const outDir = path.join(process.cwd(), path.dirname(targetFilePath));
+
+    if (!fs.existsSync(outDir)) {
+      fs.mkdirSync(outDir);
+    }
+
     const outFileName = path.basename(targetFilePath);
     const targetProject = new Project({ compilerOptions: { outDir } });
 
-    const targetFile = targetProject.createSourceFile(outFileName, {
+    const targetFile = targetProject.createSourceFile(path.join(outDir, outFileName), {
       enums: [
         {
           name: targetEnumName || sourceEnum.getName(),

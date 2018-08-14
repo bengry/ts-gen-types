@@ -8,16 +8,14 @@ Generate and transform existing TypeScript types.
 [![License](https://img.shields.io/npm/l/ts-gen-types.svg)](https://github.com/bengry/ts-gen-types/blob/master/package.json)
 
 <!-- toc -->
-
-- [ts-gen-types](#ts-gen-types)
-- [Usage](#usage)
-- [Commands](#commands)
-  <!-- tocstop -->
+* [ts-gen-types](#ts-gen-types)
+* [Usage](#usage)
+* [Commands](#commands)
+<!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g ts-gen-types
 $ ts-gen-types COMMAND
@@ -29,15 +27,13 @@ USAGE
   $ ts-gen-types COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`ts-gen-types const-enum-to-enum`](#ts-gen-types-const-enum-to-enum)
-- [`ts-gen-types help [COMMAND]`](#ts-gen-types-help-command)
+* [`ts-gen-types const-enum-to-enum`](#ts-gen-types-const-enum-to-enum)
+* [`ts-gen-types help [COMMAND]`](#ts-gen-types-help-command)
 
 ## `ts-gen-types const-enum-to-enum`
 
@@ -77,5 +73,4 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.0.5/src/commands/help.ts)_
-
 <!-- commandsstop -->

@@ -43,6 +43,7 @@
   },
   "repository": "bengry/ts-gen-types",
   "scripts": {
+    "build": "tsc",
     "postpack": "rm -f oclif.manifest.json package-lock.json",
     "prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme",
     "prepare": "rm -rf lib && tsc",
