@@ -1,15 +1,15 @@
-# gen-types
+# ts-gen-types
 
 Generate and transform existing TypeScript types.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/gen-types.svg)](https://npmjs.org/package/gen-types)
-[![Downloads/week](https://img.shields.io/npm/dw/gen-types.svg)](https://npmjs.org/package/gen-types)
-[![License](https://img.shields.io/npm/l/gen-types.svg)](https://github.com/gen-types/gen-types/blob/master/package.json)
+[![Version](https://img.shields.io/npm/v/ts-gen-types.svg)](https://npmjs.org/package/ts-gen-types)
+[![Downloads/week](https://img.shields.io/npm/dw/gen-types.svg)](https://npmjs.org/package/ts-gen-types)
+[![License](https://img.shields.io/npm/l/ts-gen-types.svg)](https://github.com/bengry/ts-gen-types/blob/master/package.json)
 
 <!-- toc -->
 
-- [gen-types](#gen-types)
+- [ts-gen-types](#ts-gen-types)
 - [Usage](#usage)
 - [Commands](#commands)
   <!-- tocstop -->
@@ -19,14 +19,14 @@ Generate and transform existing TypeScript types.
 <!-- usage -->
 
 ```sh-session
-$ npm install -g gen-types
-$ gen-types COMMAND
+$ npm install -g ts-gen-types
+$ ts-gen-types COMMAND
 running command...
-$ gen-types (-v|--version|version)
-gen-types/0.0.0 darwin-x64 node-v10.6.0
-$ gen-types --help [COMMAND]
+$ ts-gen-types (-v|--version|version)
+ts-gen-types/1.0.0 darwin-x64 node-v10.6.0
+$ ts-gen-types --help [COMMAND]
 USAGE
-  $ gen-types COMMAND
+  $ ts-gen-types COMMAND
 ...
 ```
 
@@ -36,16 +36,16 @@ USAGE
 
 <!-- commands -->
 
-- [`gen-types const-enum-to-enum`](#gen-types-const-enum-to-enum)
-- [`gen-types help [COMMAND]`](#gen-types-help-command)
+- [`ts-gen-types const-enum-to-enum`](#ts-gen-types-const-enum-to-enum)
+- [`ts-gen-types help [COMMAND]`](#ts-gen-types-help-command)
 
-## `gen-types const-enum-to-enum`
+## `ts-gen-types const-enum-to-enum`
 
 Generate an enum from a const enum
 
 ```
 USAGE
-  $ gen-types const-enum-to-enum
+  $ ts-gen-types const-enum-to-enum
 
 OPTIONS
   -h, --help                   show CLI help
@@ -56,18 +56,18 @@ OPTIONS
   --targetName=targetName      Name of the generated enum. Defaults to sourceName
 
 EXAMPLE
-  $ gen-types const-enum-to-enum
+  $ ts-gen-types const-enum-to-enum -s <sourceFile> -t <targetFile>
 ```
 
-_See code: [src/commands/const-enum-to-enum.ts](https://github.com/gen-types/gen-types/blob/v0.0.0/src/commands/const-enum-to-enum.ts)_
+_See code: [src/commands/const-enum-to-enum.ts](https://github.com/bengry/ts-gen-types/blob/v1.0.0/src/commands/const-enum-to-enum.ts)_
 
-## `gen-types help [COMMAND]`
+## `ts-gen-types help [COMMAND]`
 
-display help for gen-types
+display help for ts-gen-types
 
 ```
 USAGE
-  $ gen-types help [COMMAND]
+  $ ts-gen-types help [COMMAND]
 
 ARGUMENTS
   COMMAND  command to show help for
