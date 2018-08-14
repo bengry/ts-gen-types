@@ -1,66 +1,73 @@
-fabric-angular-gen
-==================
+# gen-types
 
-Generate Angular wrapper components from office-ui-fabric-react ones
+Generate and transform existing TypeScript types.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/fabric-angular-gen.svg)](https://npmjs.org/package/fabric-angular-gen)
-[![CircleCI](https://circleci.com/gh/fabric-angular-gen/fabric-angular-gen/tree/master.svg?style=shield)](https://circleci.com/gh/fabric-angular-gen/fabric-angular-gen/tree/master)
-[![Appveyor CI](https://ci.appveyor.com/api/projects/status/github/fabric-angular-gen/fabric-angular-gen?branch=master&svg=true)](https://ci.appveyor.com/project/fabric-angular-gen/fabric-angular-gen/branch/master)
-[![Codecov](https://codecov.io/gh/fabric-angular-gen/fabric-angular-gen/branch/master/graph/badge.svg)](https://codecov.io/gh/fabric-angular-gen/fabric-angular-gen)
-[![Downloads/week](https://img.shields.io/npm/dw/fabric-angular-gen.svg)](https://npmjs.org/package/fabric-angular-gen)
-[![License](https://img.shields.io/npm/l/fabric-angular-gen.svg)](https://github.com/fabric-angular-gen/fabric-angular-gen/blob/master/package.json)
+[![Version](https://img.shields.io/npm/v/gen-types.svg)](https://npmjs.org/package/gen-types)
+[![Downloads/week](https://img.shields.io/npm/dw/gen-types.svg)](https://npmjs.org/package/gen-types)
+[![License](https://img.shields.io/npm/l/gen-types.svg)](https://github.com/gen-types/gen-types/blob/master/package.json)
 
 <!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
-<!-- tocstop -->
+
+- [gen-types](#gen-types)
+- [Usage](#usage)
+- [Commands](#commands)
+  <!-- tocstop -->
+
 # Usage
+
 <!-- usage -->
+
 ```sh-session
-$ npm install -g fabric-angular-gen
-$ fabric-angular-gen COMMAND
+$ npm install -g gen-types
+$ gen-types COMMAND
 running command...
-$ fabric-angular-gen (-v|--version|version)
-fabric-angular-gen/0.0.0 darwin-x64 node-v10.2.1
-$ fabric-angular-gen --help [COMMAND]
+$ gen-types (-v|--version|version)
+gen-types/0.0.0 darwin-x64 node-v10.6.0
+$ gen-types --help [COMMAND]
 USAGE
-  $ fabric-angular-gen COMMAND
+  $ gen-types COMMAND
 ...
 ```
+
 <!-- usagestop -->
+
 # Commands
+
 <!-- commands -->
-* [`fabric-angular-gen hello [FILE]`](#fabric-angular-gen-hello-file)
-* [`fabric-angular-gen help [COMMAND]`](#fabric-angular-gen-help-command)
 
-## `fabric-angular-gen hello [FILE]`
+- [`gen-types const-enum-to-enum`](#gen-types-const-enum-to-enum)
+- [`gen-types help [COMMAND]`](#gen-types-help-command)
 
-describe the command here
+## `gen-types const-enum-to-enum`
+
+Generate an enum from a const enum
 
 ```
 USAGE
-  $ fabric-angular-gen hello [FILE]
+  $ gen-types const-enum-to-enum
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help                   show CLI help
+  -s, --sourceFile=sourceFile  (required) Source file path
+  -t, --targetFile=targetFile  (required) Target file path
+  --comment=comment            Optional comment to append to the target enum
+  --sourceName=sourceName      Name of the const enum in the source file path. Optional if there's only one
+  --targetName=targetName      Name of the generated enum. Defaults to sourceName
 
 EXAMPLE
-  $ fabric-angular-gen hello
-  hello world from ./src/hello.ts!
+  $ gen-types const-enum-to-enum
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/fabric-angular-gen/fabric-angular-gen/blob/v0.0.0/src/commands/hello.ts)_
+_See code: [src/commands/const-enum-to-enum.ts](https://github.com/gen-types/gen-types/blob/v0.0.0/src/commands/const-enum-to-enum.ts)_
 
-## `fabric-angular-gen help [COMMAND]`
+## `gen-types help [COMMAND]`
 
-display help for fabric-angular-gen
+display help for gen-types
 
 ```
 USAGE
-  $ fabric-angular-gen help [COMMAND]
+  $ gen-types help [COMMAND]
 
 ARGUMENTS
   COMMAND  command to show help for
@@ -70,4 +77,5 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.0.5/src/commands/help.ts)_
+
 <!-- commandsstop -->

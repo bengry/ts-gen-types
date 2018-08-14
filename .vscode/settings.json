@@ -1,0 +1,12 @@
+{
+  "cSpell.words": [
+    "globby",
+    "oclif",
+    "postpack",
+    "posttest",
+    "promisify",
+    "tslib",
+    "uifabric"
+  ],
+  "mochaExplorer.files": "${1:test/**/*.ts}"
+}

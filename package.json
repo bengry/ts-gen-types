@@ -1,30 +1,26 @@
 {
-  "name": "fabric-angular-gen",
-  "description": "Generate Angular wrapper components from office-ui-fabric-react ones",
+  "name": "ts-gen-types",
+  "description": "Generate TypeScript types from other types",
   "version": "0.0.0",
   "author": "Ben Grynhaus",
   "bin": {
-    "fabric-angular-gen": "./bin/run"
+    "ts-gen-types": "./bin/run"
   },
-  "bugs": "https://github.com/fabric-angular-gen/fabric-angular-gen/issues",
+  "bugs": "https://github.com/bengry/ts-gen-types/issues",
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
-    "tslib": "^1"
+    "ts-node": "^7.0.1",
+    "tslib": "^1",
+    "ts-simple-ast": "^13.0.0"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",
-    "@oclif/test": "^1",
     "@oclif/tslint": "^1",
-    "@types/chai": "^4",
-    "@types/mocha": "^5",
     "@types/node": "^10",
-    "chai": "^4",
     "globby": "^8",
-    "mocha": "^5",
-    "nyc": "^12",
-    "ts-node": "^6",
+    "prettier": "^1.14.2",
     "tslint": "^5",
     "typescript": "^2.9"
   },
@@ -34,29 +30,22 @@
   "files": [
     "/bin",
     "/lib",
-    "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
-  ],
-  "homepage": "https://github.com/fabric-angular-gen/fabric-angular-gen",
-  "keywords": [
-    "oclif"
   ],
   "license": "MIT",
   "main": "lib/index.js",
   "oclif": {
     "commands": "./lib/commands",
-    "bin": "fabric-angular-gen",
+    "bin": "ts-gen-types",
     "plugins": [
       "@oclif/plugin-help"
     ]
   },
-  "repository": "fabric-angular-gen/fabric-angular-gen",
+  "repository": "bengry/ts-gen-types",
   "scripts": {
-    "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
-    "posttest": "tsc -p test --noEmit && tslint -p test -t stylish",
-    "prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme && npm shrinkwrap",
+    "postpack": "rm -f oclif.manifest.json package-lock.json",
+    "prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme",
     "prepare": "rm -rf lib && tsc",
-    "test": "nyc mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
   },
   "types": "lib/index.d.ts"
