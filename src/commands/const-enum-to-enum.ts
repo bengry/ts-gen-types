@@ -50,11 +50,7 @@ export default class GenerateEnumFromConstEnum extends Command {
     comment?: string,
     singleQuote?: boolean
   ) {
-    const sourceProject = new Project({
-      manipulationSettings: {
-        quoteKind: singleQuote ? QuoteKind.Single : QuoteKind.Double,
-      },
-    });
+    const sourceProject = new Project();
 
     const sourceFile = sourceProject.addExistingSourceFile(sourceFilePath);
 
@@ -76,7 +72,12 @@ export default class GenerateEnumFromConstEnum extends Command {
     }
 
     const outFileName = path.basename(targetFilePath);
-    const targetProject = new Project({ compilerOptions: { outDir } });
+    const targetProject = new Project({
+      compilerOptions: { outDir },
+      manipulationSettings: {
+        quoteKind: singleQuote ? QuoteKind.Single : QuoteKind.Double,
+      },
+    });
 
     const absoluteTargetFilePath = path.join(outDir, outFileName);
 
