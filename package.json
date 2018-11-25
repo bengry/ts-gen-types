@@ -1,28 +1,28 @@
 {
   "name": "ts-gen-types",
   "description": "Generate TypeScript types from other types",
-  "version": "1.0.2",
+  "version": "1.1.2",
   "author": "Ben Grynhaus",
   "bin": {
     "ts-gen-types": "./bin/run"
   },
   "bugs": "https://github.com/bengry/ts-gen-types/issues",
   "dependencies": {
-    "@oclif/command": "^1",
-    "@oclif/config": "^1",
-    "@oclif/plugin-help": "^2",
+    "@oclif/command": "^1.5.6",
+    "@oclif/config": "^1.9.0",
+    "@oclif/plugin-help": "^2.1.4",
     "ts-node": "^7.0.1",
-    "tslib": "^1",
-    "ts-simple-ast": "^13.0.0"
+    "tslib": "^1.9.3",
+    "ts-simple-ast": "^19.0.0"
   },
   "devDependencies": {
-    "@oclif/dev-cli": "^1",
-    "@oclif/tslint": "^1",
-    "@types/node": "^10",
-    "globby": "^8",
-    "prettier": "^1.14.2",
-    "tslint": "^5",
-    "typescript": "^2.9"
+    "@oclif/dev-cli": "^1.19.4",
+    "@oclif/tslint": "^3.1.1",
+    "@types/node": "^10.12.10",
+    "globby": "^8.0.1",
+    "prettier": "^1.15.2",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -44,9 +44,9 @@
   "repository": "bengry/ts-gen-types",
   "scripts": {
     "build": "tsc",
-    "postpack": "rm -f oclif.manifest.json package-lock.json",
+    "postpack": "rm -f oclif.manifest.json",
     "prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme",
-    "prepare": "rm -rf lib && tsc",
+    "prepare": "rm -rf lib && tsc ",
     "version": "oclif-dev readme && git add README.md"
   },
   "types": "lib/index.d.ts"
