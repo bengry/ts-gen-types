@@ -21,7 +21,7 @@ $ npm install -g ts-gen-types
 $ ts-gen-types COMMAND
 running command...
 $ ts-gen-types (-v|--version|version)
-ts-gen-types/1.1.2 darwin-x64 node-v10.12.0
+ts-gen-types/1.1.3 darwin-x64 node-v10.12.0
 $ ts-gen-types --help [COMMAND]
 USAGE
   $ ts-gen-types COMMAND
@@ -56,7 +56,7 @@ EXAMPLE
   $ ts-gen-types const-enum-to-enum -s <sourceFile> -t <targetFile>
 ```
 
-_See code: [src/commands/const-enum-to-enum.ts](https://github.com/bengry/ts-gen-types/blob/v1.1.2/src/commands/const-enum-to-enum.ts)_
+_See code: [src/commands/const-enum-to-enum.ts](https://github.com/bengry/ts-gen-types/blob/v1.1.3/src/commands/const-enum-to-enum.ts)_
 
 ## `ts-gen-types help [COMMAND]`
 
