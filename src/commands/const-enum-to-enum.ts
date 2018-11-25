@@ -1,7 +1,7 @@
 import { Command, flags } from '@oclif/command';
 import * as fs from 'fs';
 import * as path from 'path';
-import Project, { EnumMemberStructure } from 'ts-simple-ast';
+import Project, { EnumMemberStructure, QuoteKind } from 'ts-simple-ast';
 
 export default class GenerateEnumFromConstEnum extends Command {
   static description = 'Generate an enum from a const enum';
@@ -21,13 +21,25 @@ export default class GenerateEnumFromConstEnum extends Command {
       required: false,
     }),
     targetName: flags.string({ description: 'Name of the generated enum. Defaults to sourceName', required: false }),
+    singleQuote: flags.boolean({
+      char: 'q',
+      description: 'Use single quotes instead of double quotes. Defaults to false.',
+      required: false,
+    }),
     comment: flags.string({ description: 'Optional comment to append to the target enum', required: false }),
   };
 
   async run() {
     const { flags } = this.parse(GenerateEnumFromConstEnum);
 
-    await this.generate(flags.sourceFile, flags.targetFile, flags.sourceName, flags.targetName, flags.comment);
+    await this.generate(
+      flags.sourceFile,
+      flags.targetFile,
+      flags.sourceName,
+      flags.targetName,
+      flags.comment,
+      flags.singleQuote
+    );
   }
 
   private async generate(
@@ -35,9 +47,15 @@ export default class GenerateEnumFromConstEnum extends Command {
     targetFilePath: string,
     sourceEnumName?: string,
     targetEnumName?: string,
-    comment?: string
+    comment?: string,
+    singleQuote?: boolean
   ) {
-    const sourceProject = new Project();
+    const sourceProject = new Project({
+      manipulationSettings: {
+        quoteKind: singleQuote ? QuoteKind.Single : QuoteKind.Double,
+      },
+    });
+
     const sourceFile = sourceProject.addExistingSourceFile(sourceFilePath);
 
     const sourceFileEnums = sourceFile.getEnums();
